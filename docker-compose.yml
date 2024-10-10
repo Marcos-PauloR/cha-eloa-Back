@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: confirmacaodb
+    ports:
+        - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1207
+      MYSQL_DATABASE: "confirmacaodb"
+      MYSQL_USER: "marcos"
+      MYSQL_PASSWORD: "marcos"
+    volumes:
+         - db-volume:/var/lib/mysql
+
+    networks:
+        - my_network
+
+volumes:
+  db-volume:
+
+networks:
+  my_network:
+    driver: bridge
