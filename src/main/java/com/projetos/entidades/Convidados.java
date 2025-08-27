@@ -16,4 +16,17 @@ public class Convidados {
     private Integer acompanhates;
     private String presente;
     private boolean confirmado;
+
+    public Convidados(Integer id, String nome, String mensagem, Integer acompanhates, String presente,
+                      boolean confirmado) {
+        this.id           = id;
+        this.nome         = nome;
+        this.mensagem     = mensagem;
+        this.acompanhates = acompanhates;
+        this.presente     = presente;
+        this.confirmado   = confirmado;
+    }
+
+    public Convidados() {
+    }
 }
