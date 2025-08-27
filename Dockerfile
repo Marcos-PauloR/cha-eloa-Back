@@ -1,14 +1,13 @@
-# Estágio de construção
-FROM eclipse-temurin:17-jdk-jammy AS build
+# Estágio de construção para empacotar o aplicativo
+FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
-COPY .mvn/ .mvn
 COPY pom.xml .
-RUN mvn dependency:go-offline
-COPY src/ ./src
-RUN mvn clean package -DskipTests
+COPY src ./src
+RUN mvn package
 
-# Estágio de execução
-FROM eclipse-temurin:17-jre-jammy
+# Estágio de execução para a imagem final
+FROM openjdk:17-jre-slim
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]
