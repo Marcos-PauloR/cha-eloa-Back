@@ -6,7 +6,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 
-FROM openjdk:17-jre-slim
+FROM openjdk:21
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
