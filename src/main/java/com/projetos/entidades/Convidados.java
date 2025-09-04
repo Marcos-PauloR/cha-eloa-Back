@@ -12,6 +12,7 @@ public class Convidados {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
+    @Column(name = "mensagem", columnDefinition = "TEXT")
     private String mensagem;
     private Integer acompanhates;
     private String presente;
