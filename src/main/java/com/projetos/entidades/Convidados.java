@@ -8,7 +8,6 @@ import java.util.List;
 
 @Entity
 @Data
-@Builder
 public class Convidados {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
