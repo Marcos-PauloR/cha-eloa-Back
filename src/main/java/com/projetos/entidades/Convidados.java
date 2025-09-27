@@ -17,9 +17,9 @@ public class Convidados {
     @Column(name = "mensagem", columnDefinition = "TEXT CHARACTER SET utf8mb4")
     private String mensagem;
     private List<String> companheiros;
-    private Integer acompanhates;
     private String presente;
     private boolean confirmado;
+    private Integer acompanhates;
 
     public Convidados(Integer id, String nome, String mensagem, Integer acompanhates, String presente,
                       boolean confirmado, List<String>companheiros) {
