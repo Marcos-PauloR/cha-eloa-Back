@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Builder
@@ -14,11 +16,11 @@ public class Convidados {
     private String nome;
     @Column(name = "mensagem", columnDefinition = "TEXT")
     private String mensagem;
-    private Integer acompanhates;
+    private List<String>  acompanhates;
     private String presente;
     private boolean confirmado;
 
-    public Convidados(Integer id, String nome, String mensagem, Integer acompanhates, String presente,
+    public Convidados(Integer id, String nome, String mensagem, List<String> acompanhates, String presente,
                       boolean confirmado) {
         this.id           = id;
         this.nome         = nome;
