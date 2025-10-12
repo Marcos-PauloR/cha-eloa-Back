@@ -15,6 +15,12 @@ public class Convidados {
     private String nome;
     @Column(name = "mensagem", columnDefinition = "TEXT CHARACTER SET utf8mb4")
     private String mensagem;
+    @ElementCollection
+    @CollectionTable(
+            name = "companheiros",
+            joinColumns = @JoinColumn(name = "confirmacao_id")
+            )
+    @Column(name = "nome_companheiro")
     private List<String> companheiros;
     private String presente;
     private boolean confirmado;
